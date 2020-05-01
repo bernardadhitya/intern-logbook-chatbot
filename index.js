@@ -32,4 +32,6 @@ function mainProgram(event) {
 }
 
 const port = 3000;
-app.listen(port, () => {});
+app.listen(port, () => {
+    console.log(`App is listening to ${port}`);
+});
