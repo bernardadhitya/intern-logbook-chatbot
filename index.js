@@ -2,22 +2,16 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+const puppeteer = require('puppeteer');
 
-// create LINE SDK config from env variables
 const config = {
     channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
     channelSecret: process.env.CHANNEL_SECRET,
 };
 
-// create LINE SDK client
 const client = new line.Client(config);
-
-// create Express app
-// about Express itself: https://expressjs.com/
 const app = express();
 
-// register a webhook handler with middleware
-// about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
     Promise
         .all(req.body.events.map(handleEvent))
@@ -28,24 +22,37 @@ app.post('/callback', line.middleware(config), (req, res) => {
         });
 });
 
-// event handler
+async function fill(){
+    let url = {
+        loginPage: 'https://industry.socs.binus.ac.id/learning-plan/auth/login',
+        logBookPage: 'https://industry.socs.binus.ac.id/learning-plan/student/log-book'
+    }
+    console.log('Puppeteer starting...');
+
+    let browser = await puppeteer.launch();
+    let page = await browser.newPage();
+
+    await page.goto(url.loginPage, {waitUntil: 'networkidle2'});
+
+    await page.waitFor(5000);
+    await browser.close();
+    
+    console.log('Puppeteer done!');
+}
+
 function handleEvent(event) {
     if (event.type !== 'message' || event.message.type !== 'text') {
-        // ignore non-text-message event
         return Promise.resolve(null);
     }
-
-    // create a echoing text message
     const echo = {
         type: 'text',
         text: 'Your message "' + event.message.text + '" has been processed!'
     };
 
-    // use reply API
+    await fill();
     return client.replyMessage(event.replyToken, echo);
 }
 
-// listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`listening on ${port}`);
