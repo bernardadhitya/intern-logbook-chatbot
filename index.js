@@ -72,10 +72,10 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  const message = { type: 'text', text: event.message.text };
+  const echo = { type: 'text', text: event.message.text };
   //await fill(message.text);
 
-  return client.replyMessage(event.replyToken, "Your message has been posted!");
+  return client.replyMessage(event.replyToken, echo.text);
 }
 
 const port = process.env.PORT || 3000;
