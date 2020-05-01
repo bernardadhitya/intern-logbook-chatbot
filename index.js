@@ -56,14 +56,10 @@ async function fill(desc){
 
     //fill logbook
     await page.evaluate(function(data){
-        //check if its day off
-        let currDate = new Date(Date.now());
-        if(currDate.getDay() == 0 || currDate.getDay() == 6){
-            document.querySelector('input[name="clock-in"]').value = data.clock.in;
-            document.querySelector('input[name="clock-out"]').value = data.clock.out;
-            document.querySelector('input[name="activity"]').value = data.activity;
-            document.querySelector('textarea').value = data.description;
-        }
+        document.querySelector('input[name="clock-in"]').value = data.clock.in;
+        document.querySelector('input[name="clock-out"]').value = data.clock.out;
+        document.querySelector('input[name="activity"]').value = data.activity;
+        document.querySelector('textarea').value = data.description;
         document.forms[4].submit();
     }, data);
 
