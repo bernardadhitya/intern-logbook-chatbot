@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-const puppeteer = require('puppeteer');
+//const puppeteer = require('puppeteer');
 
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -22,7 +22,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     });
 });
 
-async function fill(desc){
+/*async function fill(desc){
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -65,7 +65,7 @@ async function fill(desc){
 
     await page.waitFor(5000);
     await browser.close();
-}
+}*/
 
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -73,7 +73,7 @@ function handleEvent(event) {
   }
 
   const message = { type: 'text', text: event.message.text };
-  await fill(message.text);
+  //await fill(message.text);
 
   return client.replyMessage(event.replyToken, "Your message has been posted!");
 }
