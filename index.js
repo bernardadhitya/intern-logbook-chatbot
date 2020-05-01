@@ -49,7 +49,7 @@ function handleEvent(event) {
         text: 'Your message "' + event.message.text + '" has been processed!'
     };
 
-    await fill();
+    fill();
     return client.replyMessage(event.replyToken, echo);
 }
 
