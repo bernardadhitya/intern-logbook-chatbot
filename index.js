@@ -22,7 +22,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
         });
 });
 
-async function fill(desc){
+async function fill(msg){
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -31,7 +31,7 @@ async function fill(desc){
             out: "-"
         },
         activity: "-",
-        description: desc
+        description: msg
     }
 
     let url = {
@@ -87,7 +87,7 @@ function handleEvent(event) {
         text: 'Your message "' + event.message.text + '" has been processed!'
     };
 
-    fill(echo.text);
+    fill(event.message.text);
     return client.replyMessage(event.replyToken, echo);
 }
 
