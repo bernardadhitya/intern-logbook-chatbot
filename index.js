@@ -13,7 +13,12 @@ app.get('/', (req, res) => {
     res.send(404);
 });
 app.post('/webhook', line.middleware(config), (req, res) => {
-    res.send(200);
+    Promise
+        .all(req.body.events.map(mainProgram))
+        .then((result) => res.json(result))
+        .catch((error) => {
+            console.error(`Promise error ${error}`);
+        });
 });
 
 function mainProgram(event) {
