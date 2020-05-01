@@ -22,11 +22,23 @@ app.post('/callback', line.middleware(config), (req, res) => {
         });
 });
 
-async function fill(){
+async function fill(desc){
+    const data = {
+        username: process.env.MY_USERNAME,
+        password: process.env.MY_PASSWORD,
+        clock: {
+            in: "-",
+            out: "-"
+        },
+        activity: "-",
+        description: desc
+    }
+
     let url = {
         loginPage: 'https://industry.socs.binus.ac.id/learning-plan/auth/login',
         logBookPage: 'https://industry.socs.binus.ac.id/learning-plan/student/log-book'
     }
+
     console.log('Puppeteer starting...');
 
     let browser = await puppeteer.launch({
@@ -37,6 +49,29 @@ async function fill(){
 
     await page.goto(url.loginPage, {waitUntil: 'networkidle2'});
 
+    //fill login
+    await page.evaluate(function(data){
+        document.querySelector('input[name="username"]').value = data.username;
+        document.querySelector('input[name="password"]').value = data.password;
+        document.forms[0].submit();
+    }, data);
+
+    console.log('Login success!');
+    await page.waitFor(5000);
+    await page.goto(url.logBookPage, {waitUntil: 'networkidle2'});
+
+    //fill logbook
+    await page.evaluate(function(data){
+        //check if its day off
+        document.querySelector('input[name="clock-in"]').value = data.clock.in;
+        document.querySelector('input[name="clock-out"]').value = data.clock.out;
+        document.querySelector('input[name="activity"]').value = data.activity;
+        document.querySelector('textarea').value = data.description;
+        
+        document.forms[4].submit();
+    }, data);
+
+    console.log('Fill form success!');
     await page.waitFor(5000);
     await browser.close();
     
@@ -52,7 +87,7 @@ function handleEvent(event) {
         text: 'Your message "' + event.message.text + '" has been processed!'
     };
 
-    fill();
+    fill(echo.text);
     return client.replyMessage(event.replyToken, echo);
 }
 
