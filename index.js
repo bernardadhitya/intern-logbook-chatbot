@@ -5,8 +5,8 @@ const express = require('express');
 
 // create LINE SDK config from env variables
 const config = {
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelSecret: process.env.CHANNEL_SECRET,
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+    channelSecret: process.env.CHANNEL_SECRET,
 };
 
 // create LINE SDK client
@@ -19,31 +19,34 @@ const app = express();
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).end();
-    });
+    Promise
+        .all(req.body.events.map(handleEvent))
+        .then((result) => res.json(result))
+        .catch((err) => {
+            console.error(err);
+            res.status(500).end();
+        });
 });
 
 // event handler
 function handleEvent(event) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
-    return Promise.resolve(null);
-  }
+    if (event.type !== 'message' || event.message.type !== 'text') {
+        // ignore non-text-message event
+        return Promise.resolve(null);
+    }
 
-  // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
+    // create a echoing text message
+    const echo = {
+        type: 'text',
+        text: 'Your message "' + event.message.text + '" has been processed!'
+    };
 
-  // use reply API
-  return client.replyMessage(event.replyToken, echo);
+    // use reply API
+    return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`listening on ${port}`);
+    console.log(`listening on ${port}`);
 });
