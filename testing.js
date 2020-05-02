@@ -6,8 +6,8 @@ const controller = new Controller(msg);
 controller.run();
 */
 
-/*
-const msg = '[Day Off] Day Off';
+
+const msg = 'hello world';
 
 function getLog(){
     let log = {
@@ -20,8 +20,11 @@ function getLog(){
     }
 
     const regex = /\[(.)+\]/;
-    const activityFormat = msg.match(regex)[0];
+    const activityFormat = msg.match(regex);
 
+    return activityFormat;
+
+    /*
     if(msg[0] === '[' && activityFormat !== null){
         log.activity = activityFormat.substring(1, activityFormat.length-1);
         log.description = msg.substring(activityFormat.length+1);
@@ -33,11 +36,13 @@ function getLog(){
     }
     
     return log;
+    */
 }
 
 console.log(getLog());
-*/
 
+
+/*
 const msg = '/help';
 
 function getMessage(){
@@ -48,6 +53,6 @@ function getMessage(){
 }
 
 console.log(getMessage() === '');
-
+*/
 
 

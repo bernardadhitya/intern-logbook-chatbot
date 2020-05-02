@@ -38,7 +38,7 @@ class Fill{
         }
 
         const regex = /\[(.)+\]/;
-        const activityFormat = this.msg.match(regex)[0];
+        const activityFormat = this.msg.match(regex);
         if(this.msg[0] !== '[' || activityFormat === null){
             return '[ERR!] Message doesn\'t follow the format! Please fill the log with the following format; [<<YOUR_ACTIVITY>>] <<YOUR_DESCRIPTION>>';
         }
