@@ -21,7 +21,7 @@ class Controller{
         let response = 'in development...';
         switch(this.getCommand()){
             case '/help':
-                const help = new Help();
+                const help = new Help(this.getMessage());
                 console.log('run /help command...');
                 response = help.run();
                 break;
