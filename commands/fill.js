@@ -6,7 +6,11 @@ class Fill{
     constructor(msg){
         this.msg = msg
     }
-    async run(){
+    run(){
+        this.fill();
+        return 'Your logbook is filled for the day! You may check your logbook on the official website or use /show. Have a nice day!'
+    }
+    async fill(){
         const data = {
             username: process.env.MY_USERNAME,
             password: process.env.MY_PASSWORD,
@@ -62,7 +66,6 @@ class Fill{
         console.log('Puppeteer done!');
 
         console.log(`Fill logbook with "${ this.msg }"`);
-        return `Fill logbook with "${ this.msg }"`;
     }
 }
 
