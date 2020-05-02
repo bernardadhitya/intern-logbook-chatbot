@@ -18,24 +18,27 @@ class Controller{
         return text;
     }
     run(){
+        let response = 'in development...';
         switch(this.getCommand()){
             case '/help':
                 const help = new Help();
                 console.log('run /help command...');
-                help.run();
+                response = help.run();
                 break;
             case '/fill':
                 const fill = new Fill(this.getMessage());
                 console.log('run /fill command...');
-                fill.run();
+                response = fill.run();
                 break;
             case '/show':
                 console.log('run /show command...');
                 break;
             default:
                 console.log('[ERR!] invalid command');
+                response = 'Invalid command! Please write a valid command. You can see list of valid commands with /help';
                 break;
         }
+        return response;
     }
 }
 
