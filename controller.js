@@ -3,6 +3,7 @@
 const puppeteer = require('puppeteer');
 const Help = require('./commands/help');
 const Fill = require('./commands/fill.js');
+const Show = require('./commands/show.js');
 
 class Controller{
     constructor(msg){
@@ -31,7 +32,9 @@ class Controller{
                 response = fill.run();
                 break;
             case '/show':
+                const show = new Show(this.getMessage());
                 console.log('run /show command...');
+                response = show.run();
                 break;
             default:
                 console.log('[ERR!] invalid command');
