@@ -33,7 +33,7 @@ class Fill{
     }
     run(){
         //validate input
-        if(msg === ''){
+        if(this.msg === ''){
             return '[ERR!] Message cannot be empty! Please fill the log to be inserted into your logbook'
         }
 
