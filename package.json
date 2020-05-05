@@ -19,6 +19,8 @@
   "homepage": "https://github.com/bernardadhitya/intern-logbook-chatbot#readme",
   "dependencies": {
     "@line/bot-sdk": "^6.8.4",
+    "axios": "^0.19.2",
+    "babel": "^6.23.0",
     "express": "^4.17.1",
     "puppeteer": "^3.0.2"
   }
