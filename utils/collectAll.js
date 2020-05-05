@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 let completeLog = require('../logs/data.json');
-require ('dotenv').config();
+//require ('dotenv').config();
 
-async function main(){
+(async () => {
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -21,8 +21,7 @@ async function main(){
     }
 
     let browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox']
+        headless: true
     });
     let page = await browser.newPage();
 
@@ -80,6 +79,8 @@ async function main(){
         return allLogs;
     });
 
+
+    completeLog.data.length = 0;
     for(let i=0; i<allLogs.length; i++){
         completeLog.data.push(allLogs[i]);
     }
@@ -88,6 +89,4 @@ async function main(){
     await browser.close();
 
     fs.writeFile('./logs/data.json', JSON.stringify(completeLog, null, 4), err => err ? console.log(err) : null);
-};
-
-main();
+})();

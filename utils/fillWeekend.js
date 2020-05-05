@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
-require ('dotenv').config();
+//require ('dotenv').config();
 
-async function main(){
+(async () => {
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -19,8 +19,7 @@ async function main(){
     }
 
     let browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox']
+        headless: true
     });
     let page = await browser.newPage();
 
@@ -51,6 +50,4 @@ async function main(){
 
     await page.waitFor(5000);
     await browser.close();
-};
-
-main();
+})();
