@@ -19,7 +19,8 @@ const puppeteer = require('puppeteer');
     }
 
     let browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ['--no-sandbox']
     });
     let page = await browser.newPage();
 

@@ -21,7 +21,8 @@ let completeLog = require('../logs/data.json');
     }
 
     let browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ['--no-sandbox']
     });
     let page = await browser.newPage();
 
