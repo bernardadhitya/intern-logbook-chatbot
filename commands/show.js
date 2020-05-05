@@ -13,7 +13,6 @@ class Show{
         }
         
         return 'in development...';
-        
     }
 }
 
