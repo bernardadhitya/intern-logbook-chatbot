@@ -3,7 +3,7 @@ const fs = require('fs');
 let completeLog = require('../logs/data.json');
 require ('dotenv').config();
 
-(async () => {
+async function main(){
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -21,7 +21,8 @@ require ('dotenv').config();
     }
 
     let browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ['--no-sandbox']
     });
     let page = await browser.newPage();
 
@@ -87,4 +88,6 @@ require ('dotenv').config();
     await browser.close();
 
     fs.writeFile('./logs/data.json', JSON.stringify(completeLog, null, 4), err => err ? console.log(err) : null);
-})();
+};
+
+main();

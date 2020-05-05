@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 require ('dotenv').config();
 
-(async () => {
+async function main(){
     const data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
@@ -18,7 +18,10 @@ require ('dotenv').config();
         logBookPage: 'https://industry.socs.binus.ac.id/learning-plan/student/log-book'
     }
 
-    let browser = await puppeteer.launch();
+    let browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox']
+    });
     let page = await browser.newPage();
 
     await page.goto(url.loginPage, {waitUntil: 'networkidle2'});
@@ -48,4 +51,6 @@ require ('dotenv').config();
 
     await page.waitFor(5000);
     await browser.close();
-})();
+};
+
+main();
