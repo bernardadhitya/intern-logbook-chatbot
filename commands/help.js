@@ -20,7 +20,9 @@ class Help{
                         'If your activity is "Day Off", clock in and out will be left empty. Otherwise it will be filled by default (09.00-17.00)';
             case '/show':
                 console.log('show /help /show');
-                return '/show: Show logbook submissions';
+                return  '/show: Show logbook submissions\n' + 
+                        'format: /show <<LOG_DATE>>\n' +
+                        'LOG_DATE follows the format "dd/mm/yyyy"';
             default:
                 console.log('Invalid input for /help');
                 return  '[ERR!] Invalid input!';
