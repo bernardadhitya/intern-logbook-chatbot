@@ -85,5 +85,5 @@ require ('dotenv').config();
     await page.waitFor(5000);
     await browser.close();
 
-    fs.writeFile('../logs/data.json', JSON.stringify(completeLog, null, 4), err => err ? console.log(err) : null);
+    fs.writeFile('./logs/data.json', JSON.stringify(completeLog, null, 4), err => err ? console.log(err) : null);
 })();
