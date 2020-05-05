@@ -89,15 +89,19 @@ function getMonth(){
 console.log(getMonth());
 */
 
-/*
-const Show = require('./commands/show.js');
-const show = new Show('03/03/2020');
 
-console.log(show.run());
-*/
+// const Show = require('./commands/show.js');
+// const show = new Show('03/03/2020');
+
+// console.log(show.run());
+
 
 // const msg = 'Fri, 03/05/1999';
 // console.log(msg.split(', ')[1]);
 
 //console.log(show.getMonth());
 
+
+const Controller = require('./controller.js');
+const controller = new Controller('/show 03/04/2020');
+console.log(controller.run());
