@@ -46,8 +46,10 @@ require ('dotenv').config();
                     today.getFullYear();
 
         let allLogs = [];
-        const logs = document.querySelectorAll('table tbody tr');
-            
+
+        const container = document.querySelector('#log-book-tab');
+        const logs = container.querySelectorAll('.tab table tbody tr');
+
         for(let j=0; j<logs.length; j++){
             let log = {
                 date: '',
@@ -74,7 +76,6 @@ require ('dotenv').config();
             
             allLogs.push(log);
         }
-        
         return allLogs;
     });
 

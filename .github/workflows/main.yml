@@ -5,8 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: 
-      - 'master'
+    branches: [ master ]
   schedule:
     - cron: '0 11 * * *'
 jobs:
@@ -30,7 +29,7 @@ jobs:
         CI: true
         MY_USERNAME: ${{ secrets.MY_USERNAME }}
         MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
-    - name: Update data.json
+    - name: Collect all logbook data
       run: node utils/collectAll.js
       env:
         CI: true
