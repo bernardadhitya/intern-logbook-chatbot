@@ -710,6 +710,24 @@
             },
             "activity": "Integral - Sprint 5",
             "description": "Today we continue to observe how the team work on solving stories. We tried to make the frontend to show list of applicance in one table, with additional features to filter applicance"
+        },
+        {
+            "date": "06/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 5",
+            "description": "Today, we continue on previous task, where we integrate backend and frontend for form submission, and file submission"
+        },
+        {
+            "date": "07/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Waisak Holiday",
+            "description": "Waisak Holiday"
         }
     ]
 }
