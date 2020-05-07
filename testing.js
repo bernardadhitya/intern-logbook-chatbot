@@ -101,7 +101,11 @@ console.log(getMonth());
 
 //console.log(show.getMonth());
 
+// const Controller = require('./controller.js');
+// const controller = new Controller('/show 03/04/2020');
+// console.log(controller.run());
 
-const Controller = require('./controller.js');
-const controller = new Controller('/show 03/04/2020');
-console.log(controller.run());
+const Fill = require('./commands/fill.js');
+const fill = new Fill('[Test] Test');
+console.log(fill.run());
+

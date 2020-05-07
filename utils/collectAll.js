@@ -62,15 +62,15 @@ let completeLog = require('../logs/data.json');
                 description: 'n/a'
             }
 
+            
             let date = logs[j].querySelector('td.date').innerText;
             date = date.split(', ')[1];
             log.date = date;
 
-            if(date === currDate){
+            log.clock.in = logs[j].querySelector('td.clock-in').innerText;
+            if(log.clock.in === ''){
                 break;
             }
-
-            log.clock.in = logs[j].querySelector('td.clock-in').innerText;
             log.clock.out = logs[j].querySelector('td.clock-out').innerText;
             log.activity = logs[j].querySelector('td.activity').innerText;
             log.description = logs[j].querySelector('td.description').innerText;

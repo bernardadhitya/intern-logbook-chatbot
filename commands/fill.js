@@ -1,6 +1,7 @@
 'use strict';
 
 const puppeteer = require('puppeteer');
+const { exec } = require("child_process");
 
 class Fill{
     constructor(msg){
@@ -97,6 +98,19 @@ class Fill{
         console.log('Puppeteer done!');
 
         console.log(`Fill logbook with "${ this.msg }"`);
+        
+        //update the local database
+        exec("node utils/collectAll.js", (error, stdout, stderr) => {
+            if (error) {
+                console.log(`error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.log(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+        });
     }
 }
 
