@@ -737,6 +737,15 @@
             },
             "activity": "Integral - Sprint 5",
             "description": "Today, we continue to integrate the frontend and backend, add new tests on the code and learn more about React Hooks"
+        },
+        {
+            "date": "09/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Day Off",
+            "description": "Day Off"
         }
     ]
 }
