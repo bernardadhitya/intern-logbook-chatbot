@@ -699,7 +699,7 @@
                 "in": "09.00",
                 "out": "17.00"
             },
-            "activity": "Integral - Sprint 5",
+            "activity": "Integral - Sprint 6",
             "description": "Today we continue to observe how the team work on solving stories. We are trying to add a feature to submit recruitment form, uploading CV, and make sure they’re properly passed to backend and database"
         },
         {
@@ -708,7 +708,7 @@
                 "in": "09.00",
                 "out": "17.00"
             },
-            "activity": "Integral - Sprint 5",
+            "activity": "Integral - Sprint 6",
             "description": "Today we continue to observe how the team work on solving stories. We tried to make the frontend to show list of applicance in one table, with additional features to filter applicance"
         },
         {
@@ -755,6 +755,24 @@
             },
             "activity": "Day Off",
             "description": "Day Off"
+        },
+        {
+            "date": "11/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 5",
+            "description": "Today, we finished our feature by completely integrating both frontend and backend, merged and deployed as a feature for the project."
+        },
+        {
+            "date": "12/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 6",
+            "description": "Today, we tried to setup our laptops to configure and install additional softwares. We also conclude the sprint with retrospective and talk about stories for the next sprint"
         }
     ]
 }
