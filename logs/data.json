@@ -782,6 +782,15 @@
             },
             "activity": "Integral - Sprint 7",
             "description": "Today we start a new sprint by doing sprint planning, discussing on new features, scale the difficulties, and defining subtasks on each features"
+        },
+        {
+            "date": "14/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 7",
+            "description": "Today I go back to office to reconfigure my laptop, upgrade my OS and reinstall softwares necessary for WFH"
         }
     ]
 }
