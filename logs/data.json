@@ -791,6 +791,15 @@
             },
             "activity": "Integral - Sprint 7",
             "description": "Today I go back to office to reconfigure my laptop, upgrade my OS and reinstall softwares necessary for WFH"
+        },
+        {
+            "date": "15/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 7",
+            "description": "Today, we were assigned to stories with bugs regarding checkbox usability and incorrect string output, and we arr working to fix that problem"
         }
     ]
 }
