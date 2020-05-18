@@ -818,6 +818,15 @@
             },
             "activity": "Day Off",
             "description": "Day Off"
+        },
+        {
+            "date": "18/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 7",
+            "description": "Today, we continue to work on the bug we were assigned to. In the process we also tried to fix new issues that shows up regarding version of a package. We also find an issue in pushing updates to the recovery, and will continue to work on it tomorrow"
         }
     ]
 }
