@@ -836,6 +836,15 @@
             },
             "activity": "Integral - Sprint 7",
             "description": "Today, we continue to work on the bug, resolve bugs found yesterday, and finally merged our bug fix."
+        },
+        {
+            "date": "20/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 7",
+            "description": "Today, we helped other teams to solve their issues, help other team to finish their feature, and discuss in-depth about Sinau, an event organising app used for the developer communities in BTPN to held sharing session and trainings."
         }
     ]
 }
