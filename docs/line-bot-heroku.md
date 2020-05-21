@@ -8,6 +8,7 @@ Before following this tutorial, please make sure to have an active Github, Herok
 2. Integrate the project with Heroku
 3. Create LINE Bot channel
 4. Connect LINE Bot channel with Heroku via Webhook
+5. Give access for Heroku to access your account
 
 ### Fork the project
 1. Fork the [project repository](https://github.com/bernardadhitya/intern-logbook-chatbot) to your Github account
@@ -52,11 +53,15 @@ Before following this tutorial, please make sure to have an active Github, Herok
 13. Issue a channel access token. Save this channel access token because it is going to be used by Heroku to access your channel
 ![test](line-bot-heroku-assets/14.png)
 
+### Connect LINE Bot channel with Heroku via Webhook
+
 14. On "Webhook settings", fill the webhook url with `your-heroku-app-name.herokuapp.com/callback`. Replace `your-heroku-app-name` with your actual Heroku app name you build previously. Don't forget to check the "Use webhook" option
 ![test](line-bot-heroku-assets/15.png)
 
 15. Disable bot to join group chats, auto-reply message and greeting message. We want the bot to only reply when we chat the bot directly
 ![test](line-bot-heroku-assets/16.png)
+
+### Give access for Heroku to access your account
 
 16. Go back to Heroku. Go to "Settings" and go to "Config Vars". Fill the config vars with the following;
 
