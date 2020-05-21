@@ -11,52 +11,52 @@ Before following this tutorial, please make sure to have an active Github, Herok
 
 ### Fork the project
 1. Fork the [project repository](https://github.com/bernardadhitya/intern-logbook-chatbot) to your Github account
-![test](docs/line-bot-heroku-assets/1.png)
+![test](line-bot-heroku-assets/1.png)
 
 ### Integrate the project with Heroku
 2. Login to your Heroku account and create a new app. App name can be anything, as long as its not used by anyone
-![test](docs/line-bot-heroku-assets/2.png)
+![test](line-bot-heroku-assets/2.png)
 
 3. Go to "Deploy"
-![test](docs/line-bot-heroku-assets/3.png)
+![test](line-bot-heroku-assets/3.png)
 
 4. Go to "Deployment method" and choose "GitHub". Then redirect it to the forked repository
-![test](docs/line-bot-heroku-assets/4.png)
+![test](line-bot-heroku-assets/4.png)
 
 5. Go to "Settings", then scroll to "Buildpacks". nodejs buildpack should be added automatically, otherwise, add it manually. Add `jontewks/puppeteer` buildpack to add support to Puppeteer on Heroku
-![test](docs/line-bot-heroku-assets/5.png)
+![test](line-bot-heroku-assets/5.png)
 
 ### Create LINE Bot channel
 6. Login to your LINE Developer account, then create a Provider. This provider acts as an admin to your LINE Bot
-![test](docs/line-bot-heroku-assets/6.png)
-![test](docs/line-bot-heroku-assets/7.png)
+![test](line-bot-heroku-assets/6.png)
+![test](line-bot-heroku-assets/7.png)
 
 7. Go to "Channels" and choose "Create a new channel"
-![test](docs/line-bot-heroku-assets/8.png)
+![test](line-bot-heroku-assets/8.png)
 
 8. Choose "Messaging API"
-![test](docs/line-bot-heroku-assets/9.png)
+![test](line-bot-heroku-assets/9.png)
 
 9. Fill in the form to create your channel
-![test](docs/line-bot-heroku-assets/10.png)
+![test](line-bot-heroku-assets/10.png)
 
 10. Go to "Basic settings"
-![test](docs/line-bot-heroku-assets/11.png)
+![test](line-bot-heroku-assets/11.png)
 
 11. Issue a channel secret. Save this channel secret because it is going to be used by Heroku to access your channel
-![test](docs/line-bot-heroku-assets/12.png)
+![test](line-bot-heroku-assets/12.png)
 
 12. Go to Messaging API
-![test](docs/line-bot-heroku-assets/13.png)
+![test](line-bot-heroku-assets/13.png)
 
 13. Issue a channel access token. Save this channel access token because it is going to be used by Heroku to access your channel
-![test](docs/line-bot-heroku-assets/14.png)
+![test](line-bot-heroku-assets/14.png)
 
 14. On "Webhook settings", fill the webhook url with `your-heroku-app-name.herokuapp.com/callback`. Replace `your-heroku-app-name` with your actual Heroku app name you build previously. Don't forget to check the "Use webhook" option
-![test](docs/line-bot-heroku-assets/15.png)
+![test](line-bot-heroku-assets/15.png)
 
 15. Disable bot to join group chats, auto-reply message and greeting message. We want the bot to only reply when we chat the bot directly
-![test](docs/line-bot-heroku-assets/16.png)
+![test](line-bot-heroku-assets/16.png)
 
 16. Go back to Heroku. Go to "Settings" and go to "Config Vars". Fill the config vars with the following;
 
@@ -67,10 +67,10 @@ Before following this tutorial, please make sure to have an active Github, Herok
 | `MY_USERNAME` | Your BINUS ID (NIM) |
 | `MY_PASSWORD` | Your account password |
 
-![test](docs/line-bot-heroku-assets/17.png)
+![test](line-bot-heroku-assets/17.png)
 
 And you're done! Just add your bot to LINE and start using the bot. 
-![test](docs/line-bot-heroku-assets/18.png)
+![test](line-bot-heroku-assets/18.png)
 
 For information on how to use the bot, type '/help'.
 
