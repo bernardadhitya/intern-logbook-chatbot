@@ -3,16 +3,29 @@ const fs = require('fs');
 let completeLog = require('../logs/data.json');
 //require ('dotenv').config();
 
+Date.prototype.formattedDate = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+  
+    return [(dd>9 ? '' : '0') + dd,
+            (mm>9 ? '' : '0') + mm,
+            this.getFullYear(),
+           ].join('/');
+  };
+
 (async () => {
-    const data = {
+    let data = {
         username: process.env.MY_USERNAME,
         password: process.env.MY_PASSWORD,
-        clock: {
-            in: "-",
-            out: "-"
-        },
-        activity: "Day Off",
-        description: "Day Off"
+        log: {
+            date: '',
+            clock: {
+                in: "-",
+                out: "-"
+            },
+            activity: "-",
+            description: "-"
+        }
     }
     
     let url = {
@@ -40,12 +53,6 @@ let completeLog = require('../logs/data.json');
 
     //collect all data
     let allLogs = await page.evaluate(function(){
-        const today = new Date();
-        const currDate =
-                    (today.getDate() < 10 ? '0' + today.getDate() : today.getDate()) + '/' + 
-                    (today.getMonth() < 10 ? '0' + (today.getMonth()+1) : today.getMonth()+1) + '/' + 
-                    today.getFullYear();
-
         let allLogs = [];
 
         const container = document.querySelector('#log-book-tab');
@@ -80,6 +87,31 @@ let completeLog = require('../logs/data.json');
         return allLogs;
     });
 
+    let currDate = new Date(Date.now());
+    currDate = currDate.formattedDate();
+
+    //check if the today's log is filled
+    if(allLogs[allLogs.length-1].date !== currDate){
+        //fill today's log with yesterday's log
+        const lastData = allLogs[allLogs.length-1];
+
+        data.log.date = currDate;
+        data.log.clock.in = lastData.clock.in;
+        data.log.clock.out = lastData.clock.out;
+        data.log.activity = lastData.activity;
+        data.log.description = lastData.description;
+
+        await page.evaluate(function(data){
+            document.querySelector('input[name="clock-in"]').value = data.log.clock.in;
+            document.querySelector('input[name="clock-out"]').value = data.log.clock.out;
+            document.querySelector('input[name="activity"]').value = data.log.activity;
+            document.querySelector('textarea').value = data.log.description;
+            document.forms[4].submit();
+        }, data);
+
+        allLogs.push(data.log);
+    }
+    
 
     completeLog.data.length = 0;
     for(let i=0; i<allLogs.length; i++){
