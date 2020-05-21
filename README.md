@@ -36,8 +36,8 @@ npm install
 
 ### Deployment
 If you are planning to use this bot yourself, below we list the tutorials to;
-- Integrate autofill feature with Github Actions [here]()
-- Deploy LINE Chatbot with LINE Developer and Heroku [here]()
+- Integrate autofill feature with Github Actions [here](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/docs/autofill-github-actions.md)
+- Deploy LINE Chatbot with LINE Developer and Heroku [here](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/docs/line-bot-heroku.md)
 
 ### Resources
 For this project, I use Puppeteer for web scrapping, Express.js and LINE SDK.
