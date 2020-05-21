@@ -105,7 +105,53 @@ console.log(getMonth());
 // const controller = new Controller('/show 03/04/2020');
 // console.log(controller.run());
 
-const Fill = require('./commands/fill.js');
-const fill = new Fill('[Test] Test');
-console.log(fill.run());
+// const Fill = require('./commands/fill.js');
+// const fill = new Fill('[Test] Test');
+// console.log(fill.run());
 
+// Date.prototype.formattedDate = function () {
+//     var mm = this.getMonth() + 1; // getMonth() is zero-based
+//     var dd = this.getDate();
+
+//     return [(dd > 9 ? '' : '0') + dd,
+//         (mm > 9 ? '' : '0') + mm,
+//         this.getFullYear(),
+//     ].join('/');
+// };
+
+// const listOfHolidays = require('./logs/listOfHolidays.json');
+// let data = {
+//     username: process.env.MY_USERNAME,
+//     password: process.env.MY_PASSWORD,
+//     log: {
+//         date: '',
+//         clock: {
+//             in: "-",
+//             out: "-"
+//         },
+//         activity: "-",
+//         description: "-"
+//     }
+// };
+// let currDate = new Date(Date.now());
+// currDate = currDate.formattedDate();
+
+// if (currDate in listOfHolidays) {
+//     data.log.date = currDate;
+//     data.log.clock.in = '-';
+//     data.log.clock.out = '-';
+//     data.log.activity = listOfHolidays[currDate];
+//     data.log.description = listOfHolidays[currDate];
+// }
+// //fill today's log with yesterday's log
+// else {
+//     const lastData = allLogs[allLogs.length - 1];
+
+//     data.log.date = currDate;
+//     data.log.clock.in = lastData.clock.in;
+//     data.log.clock.out = lastData.clock.out;
+//     data.log.activity = lastData.activity;
+//     data.log.description = lastData.description;
+// }
+
+// console.log(data);

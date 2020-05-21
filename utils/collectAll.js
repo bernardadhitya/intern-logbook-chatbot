@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 let completeLog = require('../logs/data.json');
+let listOfHolidays = require('../logs/listOfHolidays.json');
 //require ('dotenv').config();
 
 Date.prototype.formattedDate = function() {
@@ -11,7 +12,7 @@ Date.prototype.formattedDate = function() {
             (mm>9 ? '' : '0') + mm,
             this.getFullYear(),
            ].join('/');
-  };
+};
 
 (async () => {
     let data = {
@@ -92,15 +93,24 @@ Date.prototype.formattedDate = function() {
 
     //check if the today's log is filled
     if(allLogs[allLogs.length-1].date !== currDate){
+        //check if there is a certain holiday
+        if(currDate in listOfHolidays){
+            data.log.date = currDate;
+            data.log.clock.in = '-';
+            data.log.clock.out = '-';
+            data.log.activity = listOfHolidays[currDate];
+            data.log.description = listOfHolidays[currDate];
+        }
         //fill today's log with yesterday's log
-        const lastData = allLogs[allLogs.length-1];
+        else{
+            const lastData = allLogs[allLogs.length-1];
 
-        data.log.date = currDate;
-        data.log.clock.in = lastData.clock.in;
-        data.log.clock.out = lastData.clock.out;
-        data.log.activity = lastData.activity;
-        data.log.description = lastData.description;
-
+            data.log.date = currDate;
+            data.log.clock.in = lastData.clock.in;
+            data.log.clock.out = lastData.clock.out;
+            data.log.activity = lastData.activity;
+            data.log.description = lastData.description;
+        }
         await page.evaluate(function(data){
             document.querySelector('input[name="clock-in"]').value = data.log.clock.in;
             document.querySelector('input[name="clock-out"]').value = data.log.clock.out;

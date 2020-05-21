@@ -48,11 +48,15 @@ These values are used to access the repository and your logbook page
 | `MY_GITHUB_USERNAME` | Your github username |
 | `MY_USERNAME` | Your BINUS ID (NIM) |
 | `MY_PASSWORD` | Your account password |
+> Secrets are encrypted and is only accessable by the repository in your own account, so it won't be visible to anyone.
 
 ![test](autofill-github-actions-assets/9.png)
-> Secrets are encrypted and is only accessable by the repository in your own account, so it won't be visible to anyone.
 
 
 That's it! Github Actions will use that value to access the repository and your logbook account to automatically fill your logbook.
+
+### Preview
+
+![test](autofill-github-actions-assets/10.png)
 
 

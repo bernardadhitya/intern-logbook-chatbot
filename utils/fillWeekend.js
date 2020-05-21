@@ -12,7 +12,7 @@ const puppeteer = require('puppeteer');
         activity: "Day Off",
         description: "Day Off"
     }
-    
+
     let url = {
         loginPage: 'https://industry.socs.binus.ac.id/learning-plan/auth/login',
         logBookPage: 'https://industry.socs.binus.ac.id/learning-plan/student/log-book'
