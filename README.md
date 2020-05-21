@@ -1,6 +1,6 @@
 # BINUS Intern Logbook LINE Chatbot and Autofiller
 
-> TL;DR For tutorial on how to use this, click [here](###how-to-use) 
+> TL;DR For tutorial on how to use this, click [here](#how-to-use) 
 
 This is a LINE Chatbot created to fill and show logbook from BINUS Internship website. This chatbot is created to help fill and show logbook when accessing the website directly is not an option.
 
