@@ -8,6 +8,7 @@ There are three main steps to configure the bot to access your local repository 
 1. Fork the project to your Github account
 2. Make a Github token to access the repository. This is used to make a local daily log of your logbook. 
 3. Make repository secrets. These values are used to access your repository and logbook page.
+4. Add Github Actions
 
 #### Fork the project
 
@@ -52,11 +53,26 @@ These values are used to access the repository and your logbook page
 
 ![test](autofill-github-actions-assets/9.png)
 
+#### Add Github Actions
+
+9. Go to the `main.yml` file (or click [here](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/main.yml)), then copy the whole script
+![test](autofill-github-actions-assets/10.png)
+
+10. Go to the Actions tab, and set a new workflow
+![test](autofill-github-actions-assets/11.png)
+
+11. Choose "set up workflow yourself"
+![test](autofill-github-actions-assets/12.png)
+
+12. Delete the boilerplate and paste the whole script there, and name it `autofill.yml`
+![test](autofill-github-actions-assets/13.png)
+
+
 
 That's it! Github Actions will use that value to access the repository and your logbook account to automatically fill your logbook.
 
 ### Preview
 
-![test](autofill-github-actions-assets/10.png)
+![test](autofill-github-actions-assets/14.png)
 
 
