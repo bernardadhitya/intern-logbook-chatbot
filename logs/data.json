@@ -845,6 +845,15 @@
             },
             "activity": "Integral - Sprint 7",
             "description": "Today, we helped other teams to solve their issues, help other team to finish their feature, and discuss in-depth about Sinau, an event organising app used for the developer communities in BTPN to held sharing session and trainings."
+        },
+        {
+            "date": "21/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Holiday",
+            "description": "Holiday"
         }
     ]
 }
