@@ -2,6 +2,8 @@
 
 This is a LINE Chatbot created to fill and show logbook from BINUS Internship website. This chatbot is created to help fill and show logbook when accessing the website directly is not an option.
 
+Additional features include autofiller for the logbook. THe bot will autofill the logbook with "Day Off" on weekend, and will fill with the last log on weekday.
+
 ### Demo
 ![Alt Text](assets/demo.gif)
 
@@ -31,6 +33,11 @@ Assuming you already have Node.js installed in your device, to install the proje
 cd intern-logbook-chatbot
 npm install
 ```
+
+### Deployment
+If you are planning to use this bot yourself, below we list the tutorials to;
+- Integrate autofill feature with Github Actions [here]()
+- Deploy LINE Chatbot with LINE Developer and Heroku [here]()
 
 ### Resources
 For this project, I use Puppeteer for web scrapping, Express.js and LINE SDK.
