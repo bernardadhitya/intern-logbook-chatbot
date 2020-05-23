@@ -854,6 +854,24 @@
             },
             "activity": "Holiday",
             "description": "Holiday"
+        },
+        {
+            "date": "22/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Cuti Bersama",
+            "description": "Cuti Bersama"
+        },
+        {
+            "date": "23/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Day Off",
+            "description": "Day Off"
         }
     ]
 }
