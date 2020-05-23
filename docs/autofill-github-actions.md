@@ -4,7 +4,7 @@
 Before following this tutorial, please make sure to have an active Github account.
 
 ### Steps
-There are three main steps to configure the bot to access your local repository and logbook account;
+There are four main steps to configure the bot to access your local repository and logbook account;
 1. Fork the project to your Github account
 2. Make a Github token to access the repository. This is used to make a local daily log of your logbook. 
 3. Make repository secrets. These values are used to access your repository and logbook page.
