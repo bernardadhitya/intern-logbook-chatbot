@@ -39,8 +39,8 @@ jobs:
         MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
     - name: Commit files
       run: |
-        git config --local user.email "${{ secrets.MY_GITHUB_EMAIL }}"
-        git config --local user.name "${{ secrets.MY_GITHUB_USERNAME }}"
+        git config --local user.email "bernard.adhitya@gmail.com"
+        git config --local user.name "bernardadhitya"
         git commit -m "[System] Auto-update data.json" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
