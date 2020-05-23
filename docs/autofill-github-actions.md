@@ -45,8 +45,6 @@ These values are used to access the repository and your logbook page
 | Name | Value |
 | ---- | ----- |
 | `MY_GITHUB_TOKEN` | Paste your github token you previously made |
-| `MY_GITHUB_EMAIL` | Your github account email |
-| `MY_GITHUB_USERNAME` | Your github username |
 | `MY_USERNAME` | Your BINUS ID (NIM) |
 | `MY_PASSWORD` | Your account password |
 > Secrets are encrypted and is only accessable by the repository in your own account, so it won't be visible to anyone.
@@ -55,7 +53,7 @@ These values are used to access the repository and your logbook page
 
 #### Add Github Actions
 
-9. Go to the `main.yml` file (or open [this link](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/main.yml) on new tab), then copy the whole script
+9. Go to the `template.yml` file (or open [this link](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/template.yml) on new tab), then copy the whole script
 ![test](autofill-github-actions-assets/10.png)
 
 10. Go to the Actions tab, and set a new workflow
@@ -67,7 +65,8 @@ These values are used to access the repository and your logbook page
 12. Delete the boilerplate and paste the whole script there, and name it `autofill.yml`
 ![test](autofill-github-actions-assets/13.png)
 
-
+13. On line 40, there will be a step to commit data to your forked repository. Replace `INSERT_YOUR_GITHUB_EMAIL_HERE` and `INSERT_YOUR_GITHUB_USERNAME_HERE` with your credentials.
+![test](autofill-github-actions-assets/15.png)
 
 That's it! Github Actions will use that value to access the repository and your logbook account to automatically fill your logbook.
 

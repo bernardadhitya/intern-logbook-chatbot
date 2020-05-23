@@ -1,18 +1,21 @@
 # Deploy LINE Chatbot with LINE Developer and Heroku
 
 ### Prerequisite
-Before following this tutorial, please make sure to have an active Github, Heroku and LINE Developer account.
+Before following this tutorial, please make sure to have;
+- have done setting up the [autofiller](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/docs/autofill-github-actions.md)
+- an active Github
+- Heroku account 
+- LINE Developer account
 
 ### Steps
-1. Fork the project
+1. Setup the autofiller
 2. Integrate the project with Heroku
 3. Create LINE Bot channel
 4. Connect LINE Bot channel with Heroku via Webhook
 5. Give access for Heroku to access your account
 
-### Fork the project
-1. Fork the [project repository](https://github.com/bernardadhitya/intern-logbook-chatbot) to your Github account
-![test](line-bot-heroku-assets/1.png)
+### Setup the autofiller
+1. In case you missed it, please read the tutorial on how to setup the autofiller [here](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/docs/autofill-github-actions.md). The autofiller is used not only to autofill, but also do daily local update on the API to get your latest logbook data.
 
 ### Integrate the project with Heroku
 2. Login to your Heroku account and create a new app. App name can be anything, as long as its not used by anyone
