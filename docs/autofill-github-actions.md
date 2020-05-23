@@ -29,12 +29,12 @@ There are three main steps to configure the bot to access your local repository 
 5. Fill in the note and check the required permissions for the bot to access the repository
 ![test](autofill-github-actions-assets/5.png)
 
-6. You will get your Github token. COPY IT IMMEDIATELY, once you refresh/reload the page, you will not see the code again
+6. You will get your Github token. **COPY IT IMMEDIATELY**, once you refresh/reload the page, you will not see the code again
 ![test](autofill-github-actions-assets/6.png)
 
 #### Make repository secrets
 
-7. Go back to the repository settings. On the left, you will find a sidebar. Click on "Secrets"
+7. Go back to **your forked repository settings**. On the left, you will find a sidebar. Click on "Secrets"
 ![test](autofill-github-actions-assets/7.png)
 
 8. Here, you will need to create new secrets. 
@@ -55,7 +55,7 @@ These values are used to access the repository and your logbook page
 
 #### Add Github Actions
 
-9. Go to the `main.yml` file (or click [here](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/main.yml)), then copy the whole script
+9. Go to the `main.yml` file (or open [this link](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/main.yml) on new tab), then copy the whole script
 ![test](autofill-github-actions-assets/10.png)
 
 10. Go to the Actions tab, and set a new workflow

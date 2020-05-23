@@ -45,7 +45,7 @@ class Fill{
         }
 
         this.fill();
-        return 'Your logbook is filled for the day! You may check your logbook on the official website or use /show. Have a nice day!'
+        return 'Your logbook is filled for the day! You may check your logbook on the official website. The log can be checked via /show on the next day. Have a nice day!'
     }
     async fill(){
         const data = {
