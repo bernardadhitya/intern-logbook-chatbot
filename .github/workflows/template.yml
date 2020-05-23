@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  #push:
+  #  branches: [ master ]
+  schedule:
+    - cron: '20 16 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: sudo apt-get update
+    - run: sudo apt-get install -y libgbm-dev
+    - name: Update logbook on weekend
+      run: node utils/fillWeekend.js
+      env:
+        CI: true
+        MY_USERNAME: ${{ secrets.MY_USERNAME }}
+        MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+    - name: Collect all logbook data
+      run: node utils/collectAll.js
+      env:
+        CI: true
+        MY_USERNAME: ${{ secrets.MY_USERNAME }}
+        MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+    - name: Commit files
+      run: |
+        git config --local user.email "INSERT_YOUR_GITHUB_EMAIL_HERE"
+        git config --local user.name "INSERT_YOUR_GITHUB_USERNAME_HERE"
+        git commit -m "[System] Auto-update data.json" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.MY_GITHUB_TOKEN }}
