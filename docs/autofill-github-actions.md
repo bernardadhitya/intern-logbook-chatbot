@@ -53,7 +53,7 @@ These values are used to access the repository and your logbook page
 
 #### Add Github Actions
 
-9. Go to the `template.yml` file (or open [this link](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/.github/workflows/template.yml) on new tab), then copy the whole script
+9. Open [this link](https://github.com/bernardadhitya/intern-logbook-chatbot/blob/master/docs/autofill-github-actions-assets/template.yml) on new tab, then copy the whole script
 ![test](autofill-github-actions-assets/10.png)
 
 10. Go to the Actions tab, and set a new workflow
