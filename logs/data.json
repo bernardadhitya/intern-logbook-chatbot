@@ -881,6 +881,15 @@
             },
             "activity": "Day Off",
             "description": "Day Off"
+        },
+        {
+            "date": "25/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Idul Fitri Holiday",
+            "description": "Idul Fitri Holiday"
         }
     ]
 }
