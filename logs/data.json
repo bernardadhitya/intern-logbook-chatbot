@@ -890,6 +890,15 @@
             },
             "activity": "Idul Fitri Holiday",
             "description": "Idul Fitri Holiday"
+        },
+        {
+            "date": "26/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Idul Fitri Holiday",
+            "description": "Idul Fitri Holiday"
         }
     ]
 }
