@@ -899,6 +899,15 @@
             },
             "activity": "Idul Fitri Holiday",
             "description": "Idul Fitri Holiday"
+        },
+        {
+            "date": "27/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today we start a new sprint by doing pair review to see each pairs progress, do sprint planning to plan for the whole sprint, and rearrange pairs for this sprint"
         }
     ]
 }
