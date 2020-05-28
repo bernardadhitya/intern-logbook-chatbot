@@ -894,11 +894,11 @@
         {
             "date": "26/05/2020",
             "clock": {
-                "in": "-",
-                "out": "-"
+                "in": "09.00",
+                "out": "17.00"
             },
-            "activity": "Idul Fitri Holiday",
-            "description": "Idul Fitri Holiday"
+            "activity": "Integral - Sprint 7",
+            "description": "Today we continue to help other team fix their bugs and issues, and reconfigure some settings in intelij to match other's settings"
         },
         {
             "date": "27/05/2020",
@@ -908,6 +908,15 @@
             },
             "activity": "Integral - Sprint 8",
             "description": "Today we start a new sprint by doing pair review to see each pairs progress, do sprint planning to plan for the whole sprint, and rearrange pairs for this sprint"
+        },
+        {
+            "date": "28/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today, we start working on adding a search bar to help user to search candidates with specific status. We have implemented basic use case and test for today."
         }
     ]
 }
