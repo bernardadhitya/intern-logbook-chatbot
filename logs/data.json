@@ -917,6 +917,15 @@
             },
             "activity": "Integral - Sprint 8",
             "description": "Today, we start working on adding a search bar to help user to search candidates with specific status. We have implemented basic use case and test for today."
+        },
+        {
+            "date": "29/05/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today, we continue to add functionalities to the search bar, add tests, and fix how the search bar looks in the page."
         }
     ]
 }
