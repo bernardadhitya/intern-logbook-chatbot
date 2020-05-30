@@ -926,6 +926,15 @@
             },
             "activity": "Integral - Sprint 8",
             "description": "Today, we continue to add functionalities to the search bar, add tests, and fix how the search bar looks in the page."
+        },
+        {
+            "date": "30/05/2020",
+            "clock": {
+                "in": "-",
+                "out": "-"
+            },
+            "activity": "Day Off",
+            "description": "Day Off"
         }
     ]
 }
