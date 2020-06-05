@@ -88,8 +88,8 @@ Date.prototype.formattedDate = function() {
         return allLogs;
     });
 
-    let currDate = new Date(Date.now());
-    currDate = currDate.formattedDate();
+    let today = new Date(Date.now());
+    let currDate = today.formattedDate();
 
     //check if the today's log is filled
     if(allLogs[allLogs.length-1].date !== currDate){
@@ -100,6 +100,16 @@ Date.prototype.formattedDate = function() {
             data.log.clock.out = '-';
             data.log.activity = listOfHolidays[currDate];
             data.log.description = listOfHolidays[currDate];
+        }
+        //check if yesterday was a Day Off (Monday)
+        else if(today.getDay() == 1){
+            const lastData = allLogs[allLogs.length-3];
+
+            data.log.date = currDate;
+            data.log.clock.in = lastData.clock.in;
+            data.log.clock.out = lastData.clock.out;
+            data.log.activity = lastData.activity;
+            data.log.description = lastData.description;
         }
         //fill today's log with yesterday's log
         else{
