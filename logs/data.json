@@ -946,13 +946,40 @@
             "description": "Day Off"
         },
         {
-            "date": "03/06/2020",
+            "date": "01/06/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today we fix issues with CSS part of the table and search bar. We are done with it and have merged the code to master"
+        },
+        {
+            "date": "02/06/2020",
             "clock": {
                 "in": "-",
                 "out": "-"
             },
             "activity": "Day Off",
             "description": "Day Off"
+        },
+        {
+            "date": "03/06/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today we continue by merging our feature to the master, and fix some merge conflicts. We continue fixing some styling problems, and fix small bugs that occurs"
+        },
+        {
+            "date": "05/06/2020",
+            "clock": {
+                "in": "09.00",
+                "out": "17.00"
+            },
+            "activity": "Integral - Sprint 8",
+            "description": "Today we continue by merging our feature to the master, and fix some merge conflicts. We continue fixing some styling problems, and fix small bugs that occurs"
         }
     ]
 }
